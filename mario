@@ -1,0 +1,77 @@
+
+/*** 
+                                ##
+                               ###
+                              #### 
+ Pset1 marion with piramid get user
+***/
+
+#include <stdio.h>
+#include <cs50.h>
+
+// protoytpe
+int get_number ();
+void errorNbrpirmid ();
+
+// main princiaple programme 
+int main ( void )
+{
+  // variable declaration
+  int height;
+  int g_piramid;
+
+  int space;
+
+  do
+  {
+      height = get_number ();
+
+      if (height <= 0 || height >= 23)
+      {
+        // problem sorry!
+        errorNbrpirmid ();
+      }  
+  }
+  while (height <= 0 || height >= 23);
+
+  // piramid implemnt programme lets Go!
+
+  g_piramid = 1;
+
+  while (g_piramid <= height)
+  {
+      // with space prnt
+      for (space = 0; space <= height - g_piramid; space++ )
+      {
+          printf(" ");
+      } 
+      
+      for (space = 0; space < g_piramid + 1; space++ )
+      {
+          printf ("#");
+      }
+
+      printf("\n");
+
+      // values increments 
+      g_piramid +=1;
+  }
+
+  return 0;
+}
+
+// Number piramid
+int get_number ()
+{
+   printf("Number piramid :");
+
+   int height = get_int();
+   return height;
+}
+
+// number input error
+void errorNbrpirmid ()
+{
+  printf ("Not negative or superior to '23')\n");
+}
+// J.Christ 
